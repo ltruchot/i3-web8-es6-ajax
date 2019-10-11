@@ -1,6 +1,18 @@
 body {
-  background-image: url(assets/images/bg.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-color: lavenderblush;
   font-family: "Roboto";
 }
+h3 {
+  text-transform: uppercase;
+}
+.image-rounded {
+  width: 150px;
+  display: block;
+  border-radius: 50%;
+}
+/* div.field {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: auto;
+} */

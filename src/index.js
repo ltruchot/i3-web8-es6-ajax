@@ -1,28 +1,49 @@
-import { get, post } from 'axios';
 import $ from 'jquery';
+import { post } from 'axios';
+import { uniq, uniqBy, prop } from 'ramda';
 
-post('http://localhost:3000/users', {
-  firstname: 'toutou',
-  lastname: 'titi',
-  username: 'tt',
-  salary: 8000,
-}).then(() => {
-  const str = prompt('?');
-  return get(`http://localhost:3000/users?q=${str}`);
+/*
+const data = {
+  id: 2744025822,
+  userId: 'ltruchot',
+  auteur: 'Douglas Crockford',
+  annee: 2013,
+  titre: 'Javascript - Les bons éléments',
+  url: 'https://www.amazon.fr/Javascript-bons-%C3%A9l%C3%A9ments-Douglas-Crockford/dp/2744025828/ref=sr_1_3?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=les+bons+%C3%A9l%C3%A9ments&qid=1570712312&sr=8-3',
+  imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41YXREIo1sL._SX351_BO1,204,203,200_.jpg',
+};
+
+
+$.ajax({
+  contentType: 'application/json',
+  url: 'https://mini-json-server.committers.ngo/livres',
+  dataType: 'json',
+  data: JSON.stringify(data),
+  type: 'POST',
 })
-  .then((res) => res.data)
-  .then((users) => {
-    for (const user of users) {
-      $(`<div>${user.firstname} ${user.lastname} (${user.username})</div>`).appendTo('body');
-    }
+  .then(() => $.get('https://mini-json-server.committers.ngo/livres'))
+  .then(console.log);
 
-    const salaries = users.map((u) => u.salary);
-    let count = 0;
-    for (const salary of salaries) {
-      count += salary;
-    }
-    console.log(count / salaries.length);
-  })
-  .catch(() => {
-    $('<div>Ce user n\'existe pas</div>').appendTo('body');
-  });
+*/
+
+
+$.get('https://mini-json-server.committers.ngo/livres').then((livres) => {
+  const filteredLivres = uniqBy(prop('id'), livres);
+
+  const divs = filteredLivres
+    .filter((livre) => !!livre.id)
+    // .filter((l) => (l.titre && l.titre.toUpperCase()) !== 'LA VIE EST UNE PLAGE')
+    .map((livre) => $(`
+    <div style="display:flex;">
+    <div>
+      <img src="${livre.imageUrl}" class="image-rounded" />
+    </div>
+     <div>
+        <h3>${livre.titre}</h3>
+        <h4>${livre.auteur} - ${livre.annee}</h4>
+        <a href="${livre.url}">Acheter</a>
+      </div>
+    </div>
+  `));
+  $('body').append(divs);
+});

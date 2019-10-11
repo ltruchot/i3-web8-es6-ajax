@@ -1,184 +1,48 @@
 {
   "users": [
     {
-      "id": 0,
       "firstname": "Loïc",
-      "lastname": "Truchot",
-      "username": "lt",
-      "salary": 1500
+      "lastname": "TRUCHOT",
+      "username": "ltruchot",
+      "salary": 4999,
+      "id": 1
     },
     {
-      "id": 2,
-      "firstname": "Sonia",
-      "lastname": "Blasquez",
-      "username": "sb",
-      "salary": 2000
+      "firstname": "Bruce",
+      "lastname": "WILLIS",
+      "username": "bwillis",
+      "salary": 10000000,
+      "id": 2
     },
     {
-      "id": 2,
-      "firstname": "Jennifer",
-      "lastname": "Dejond",
-      "username": "jd",
-      "salary": 1950
-    },
-    {
-      "firstname": "toto",
-      "lastname": "titi",
-      "salary": 8000,
+      "firstname": "Toto",
+      "lastname": "Titi",
+      "username": "ttiti",
+      "salary": null,
       "id": 3
+    }
+  ],
+  "articles": [
+    {
+      "title": "Javascript is awesome because...",
+      "body": "Javascript is better than Java, C# and PHP united, because I decided..",
+      "date": 1539161631000,
+      "userId": 1,
+      "id": 0
     },
     {
-      "firstname": "toto",
-      "lastname": "titi",
-      "salary": 8000,
-      "id": 4
+      "title": "Story of my cat Asaliah",
+      "body": "Asaliah is an old but beautiful cat. She likes to eat chicken.",
+      "date": 1539161631000,
+      "userId": 1,
+      "id": 0
     },
     {
-      "firstname": "toto",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 5
-    },
-    {
-      "firstname": "toto",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 6
-    },
-    {
-      "firstname": "toto",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 7
-    },
-    {
-      "firstname": "toto",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 8
-    },
-    {
-      "firstname": "tata",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 9
-    },
-    {
-      "firstname": "tata",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 10
-    },
-    {
-      "firstname": "tete",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 11
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 12
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 13
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 14
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 15
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 16
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 17
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 18
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 19
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 20
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 21
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 22
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 23
-    },
-    {
-      "firstname": "tonton",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 24
-    },
-    {
-      "firstname": "toutou",
-      "lastname": "titi",
-      "username": "tt",
-      "salary": 8000,
-      "id": 25
+      "title": "Mon role dans looper",
+      "body": "C'était bien.",
+      "date": 1539161631000,
+      "userId": 2,
+      "id": 0
     }
   ]
 }
