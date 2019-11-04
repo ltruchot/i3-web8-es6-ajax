@@ -1,49 +1,48 @@
-import $ from 'jquery';
-import { post } from 'axios';
-import { uniq, uniqBy, prop } from 'ramda';
+import {
+  merge, reduce, reject, equals, splitEvery,
+  sort, dropLast, juxt, descend, prop, takeWhile, repeat,
+} from 'ramda';
 
-/*
-const data = {
-  id: 2744025822,
-  userId: 'ltruchot',
-  auteur: 'Douglas Crockford',
-  annee: 2013,
-  titre: 'Javascript - Les bons éléments',
-  url: 'https://www.amazon.fr/Javascript-bons-%C3%A9l%C3%A9ments-Douglas-Crockford/dp/2744025828/ref=sr_1_3?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=les+bons+%C3%A9l%C3%A9ments&qid=1570712312&sr=8-3',
-  imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41YXREIo1sL._SX351_BO1,204,203,200_.jpg',
-};
+import { users } from './data/humans';
 
 
-$.ajax({
-  contentType: 'application/json',
-  url: 'https://mini-json-server.committers.ngo/livres',
-  dataType: 'json',
-  data: JSON.stringify(data),
-  type: 'POST',
-})
-  .then(() => $.get('https://mini-json-server.committers.ngo/livres'))
-  .then(console.log);
-
-*/
+const mergeMultiple = (...objs) => reduce(merge, {})(objs);
+const loic = mergeMultiple({ nom: 'toto', age: 10 }, { age: 40, taille: 176 }, { age: 34 }, { toot: 3 });
+console.log(loic);
 
 
-$.get('https://mini-json-server.committers.ngo/livres').then((livres) => {
-  const filteredLivres = uniqBy(prop('id'), livres);
+const tb = [1, 2, 30];
+const enlever = reject(equals(30), tb);
+console.log(enlever);
 
-  const divs = filteredLivres
-    .filter((livre) => !!livre.id)
-    // .filter((l) => (l.titre && l.titre.toUpperCase()) !== 'LA VIE EST UNE PLAGE')
-    .map((livre) => $(`
-    <div style="display:flex;">
-    <div>
-      <img src="${livre.imageUrl}" class="image-rounded" />
-    </div>
-     <div>
-        <h3>${livre.titre}</h3>
-        <h4>${livre.auteur} - ${livre.annee}</h4>
-        <a href="${livre.url}">Acheter</a>
-      </div>
-    </div>
-  `));
-  $('body').append(divs);
-});
+const motTroisLettres = splitEvery(3, 'précléarcfoicoqsonp');
+console.log(motTroisLettres);
+
+const byAge = descend(prop('age'));
+const people = [
+  { name: 'Mélanie', age: 23 },
+  { name: 'Jessica', age: 28 },
+  { name: 'Lavinia', age: 35 },
+  { name: 'Lucie', age: 83 },
+  { name: 'Julia', age: 59 },
+];
+const peopleByOldestFirst = sort(byAge, people);
+console.log(peopleByOldestFirst);
+
+// jette le dernier élèment de la list ou a partir du dernier élèment selon le nombre donnée
+const twoItems = dropLast(1, ['Pikachu', 'Carapuce', 'Miaouss']);
+const guess = dropLast(2, 'bouhaueiuAieboauebo');
+console.log(twoItems);
+console.log(guess);
+
+const double = (a) => a * 2;
+const square = (a) => a * a;
+const doubledAndSquared = juxt([double, square]);
+console.log(doubledAndSquared(10));
+
+const words = ['star', 'toto', "l'enfant", 'le soleil', 'la libre', 'star'];
+const answer = takeWhile(x => !x.startsWith('l'), words);
+console.log(answer);
+
+const arr = 2;
+console.log(repeat(arr, 4));

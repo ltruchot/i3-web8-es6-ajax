@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "firstname": "Loïc",
+      "lastname": "TRUCHOT",
+      "username": "ltruchot",
+      "salary": 4999,
+      "id": 1
+    },
+    {
+      "firstname": "Bruce",
+      "lastname": "WILLIS",
+      "username": "bwillis",
+      "salary": 10000000,
+      "id": 2
+    },
+    {
+      "firstname": "Toto",
+      "lastname": "Titi",
+      "username": "ttiti",
+      "salary": null,
+      "id": 3
+    }
+  ],
+  "articles": [
+    {
+      "title": "Javascript is awesome because...",
+      "body": "Javascript is better than Java, C# and PHP united, because I decided..",
+      "date": 1539161631000,
+      "userId": 1,
+      "id": 0
+    },
+    {
+      "title": "Story of my cat Asaliah",
+      "body": "Asaliah is an old but beautiful cat. She likes to eat chicken.",
+      "date": 1539161631000,
+      "userId": 1,
+      "id": 0
+    },
+    {
+      "title": "Mon role dans looper",
+      "body": "C'était bien.",
+      "date": 1539161631000,
+      "userId": 2,
+      "id": 0
+    }
+  ]
+}

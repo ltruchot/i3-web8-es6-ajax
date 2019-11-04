@@ -8,8 +8,8 @@
   },
   "main": "./src/index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "build": "webpack --env.NODE_ENV=prod",
+    "start": "webpack-dev-server --env.NODE_ENV=dev",
     "server": "json-server ./server/db.json"
   },
   "author": "Loïc TRUCHOT",
@@ -41,6 +41,9 @@
   "dependencies": {
     "axios": "^0.19.0",
     "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "ramda": "^0.26.1"
   }
 }
